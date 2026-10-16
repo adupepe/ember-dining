@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMBER | Rezerwacje</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:40px;background:#f1ede3;color:#171814;font:14px Arial,sans-serif}main{max-width:1200px;margin:auto}h1{font:52px Georgia,serif;margin:0 0 10px}.sub{color:#777;margin-bottom:35px}.login{display:flex;gap:10px;margin-bottom:30px}.login input{width:300px;padding:12px;border:1px solid #bbb;background:#fff}.login button{padding:12px 20px;background:#171814;color:#fff;border:0;cursor:pointer}.stats{display:flex;gap:12px;margin-bottom:20px}.stat{padding:18px 24px;background:#fff}.stat strong{display:block;font-size:24px}.stat span{font-size:11px;color:#777}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:14px;text-align:left;border-bottom:1px solid #ddd;font-size:12px}th{background:#171814;color:#fff;text-transform:uppercase;letter-spacing:.08em}.empty{padding:40px;text-align:center;color:#777}.error{color:#b22}@media(max-width:700px){body{padding:20px}.login{display:grid}.login input{width:100%}.table-wrap{overflow:auto}h1{font-size:38px}}
+  </style>
+</head>
+<body><main><h1>Rezerwacje EMBER</h1><p class="sub">Panel administracyjny</p>
+  <div class="login"><input type="password" id="key" placeholder="Klucz administratora"><button id="load">Pokaż rezerwacje</button></div>
+  <p id="message"></p><div id="stats" class="stats"></div>
+  <div class="table-wrap"><table><thead><tr><th>Numer</th><th>Termin</th><th>Goście</th><th>Klient</th><th>Kontakt</th><th>Uwagi</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main><script>
+const key=document.querySelector("#key"),msg=document.querySelector("#message"),rows=document.querySelector("#rows"),stats=document.querySelector("#stats");
+document.querySelector("#load").onclick=async()=>{msg.textContent="Ładowanie...";try{const r=await fetch("/api/reservations",{headers:{"X-Admin-Key":key.value}});const d=await r.json();if(!r.ok)throw new Error(d.error);msg.textContent="";stats.innerHTML=`<div class="stat"><strong>${d.length}</strong><span>wszystkich rezerwacji</span></div><div class="stat"><strong>${d.reduce((a,x)=>a+Number(x.guests),0)}</strong><span>zarezerwowanych miejsc</span></div>`;rows.innerHTML=d.length?d.map(x=>`<tr><td>${x.reference}</td><td>${x.date}<br>${x.time}</td><td>${x.guests}</td><td>${x.name}</td><td>${x.phone}<br>${x.email}</td><td>${x.notes||"—"}</td></tr>`).join(""):`<tr><td colspan="6" class="empty">Brak rezerwacji</td></tr>`}catch(e){msg.textContent=e.message;msg.className="error"}};</script></body></html>
