@@ -38,9 +38,14 @@ function renderMenu(name) {
 renderMenu("dinner");
 
 tabs.forEach((tab) => tab.addEventListener("click", () => {
+  if (tab.classList.contains("active")) return;
   tabs.forEach((item) => item.classList.remove("active"));
   tab.classList.add("active");
-  renderMenu(tab.dataset.tab);
+  list.classList.add("switching");
+  window.setTimeout(() => {
+    renderMenu(tab.dataset.tab);
+    list.classList.remove("switching");
+  }, 220);
 }));
 
 const observer = new IntersectionObserver((entries) => {
