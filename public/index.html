@@ -3,172 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EMBER, kuchnia żywego ognia w sercu Krakowa.">
-  <title>EMBER | Kuchnia żywego ognia</title>
+  <meta name="description" content="EMBER, eksperymentalna kuchnia żywego ognia w Krakowie.">
+  <title>EMBER / Open Fire Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="intro" aria-hidden="true"><span>EMBER</span><i></i></div>
+  <div class="boot" aria-hidden="true">
+    <div class="boot__top"><span>EMBER®</span><span>LOADING HEAT</span></div>
+    <strong data-boot-count>000</strong>
+    <div class="boot__bar"><i></i></div>
+  </div>
+  <div class="cursor" aria-hidden="true"><span>VIEW</span></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <header class="header">
-    <a class="brand" href="#home">EMBER<span>.</span></a>
-    <nav aria-label="Główna nawigacja">
-      <a href="#story">O nas</a>
-      <a href="#menu">Menu</a>
-      <a href="#visit">Kontakt</a>
+  <header class="nav">
+    <a class="nav__logo" href="#top">EM<span>B</span>ER</a>
+    <div class="nav__status"><i></i> FIRE IS LIVE</div>
+    <nav aria-label="Nawigacja">
+      <a href="#method">Metoda</a>
+      <a href="#experiments">Menu</a>
+      <a href="#reserve">Rezerwacja</a>
     </nav>
-    <a class="header__cta" href="#booking">Rezerwacja <span>↗</span></a>
-    <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false"><i></i><i></i></button>
+    <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false">MENU</button>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <img class="hero__image" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=2200&q=90" alt="Eleganckie wnętrze restauracji EMBER">
-      <div class="hero__overlay"></div>
-      <p class="hero__label reveal">Kraków · Kazimierz · Est. 2026</p>
-      <div class="hero__title">
-        <span class="hero__line"><span>Kuchnia, która</span></span>
-        <span class="hero__line hero__line--accent"><span>zaczyna się od ognia.</span></span>
+    <section class="hero" id="top">
+      <div class="hero__meta mono">
+        <span>50.0485° N</span><span>19.9446° E</span><span>KRAKÓW / PL</span>
       </div>
-      <div class="hero__footer">
-        <p>Sezonowe produkty. Otwarty ogień.<br>Wieczory, które zostają w pamięci.</p>
-        <a href="#story">Poznaj EMBER <i></i></a>
+      <div class="hero__copy">
+        <div class="hero__index mono">OPEN FIRE LAB / 001</div>
+        <h1>
+          <span class="word" data-parallax="-0.03">WE</span>
+          <span class="word word--outline" data-parallax="0.04">BURN</span>
+          <span class="word word--italic" data-parallax="-0.02">RULES.</span>
+        </h1>
+        <p>Nie gotujemy według schematów.<br>Badamy, co ogień robi ze smakiem.</p>
       </div>
-      <div class="hero__seal"><span>✦</span><svg viewBox="0 0 120 120"><defs><path id="ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text><textPath href="#ring">EMBER · FIRE · KRAKÓW · SEASON · </textPath></text></svg></div>
+      <figure class="hero__plate interactive">
+        <img src="hero-dish.webp" alt="Autorskie danie EMBER z opalanym porem">
+        <figcaption class="mono">EXPERIMENT 07 / LEEK / MISO / SMOKE</figcaption>
+      </figure>
+      <div class="hero__temperature">
+        <strong data-temp>742</strong><sup>°C</sup>
+        <span class="mono">CURRENT<br>CORE HEAT</span>
+      </div>
+      <a class="hero__scroll mono" href="#method">SCROLL TO IGNITE <i></i></a>
+      <div class="ticker" aria-hidden="true">
+        <div>RAW / FIRE / ACID / SMOKE / RAW / FIRE / ACID / SMOKE /&nbsp;</div>
+        <div>RAW / FIRE / ACID / SMOKE / RAW / FIRE / ACID / SMOKE /&nbsp;</div>
+      </div>
     </section>
 
-    <section class="statement section" id="story">
-      <div class="section__number reveal">01 / O nas</div>
-      <div class="statement__content">
-        <p class="eyebrow reveal">Prosto z ognia</p>
-        <h2 class="heading reveal">Dobre jedzenie nie<br>potrzebuje <em>dekoracji.</em></h2>
-        <div class="statement__bottom reveal">
-          <p>W EMBER najważniejszy jest produkt. Warzywa od lokalnych gospodarstw, mięso od zaufanych hodowców i ogień, który nadaje im charakter.</p>
-          <a class="arrow-link" href="#menu">Zobacz nasze menu <span>↗</span></a>
-        </div>
+    <section class="manifest" id="method">
+      <div class="manifest__side mono reveal">
+        <span>(01)</span>
+        <span>OUR OPERATING SYSTEM</span>
       </div>
-    </section>
-
-    <section class="feature-image">
-      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=2200&q=90" alt="Szef kuchni EMBER przy pracy">
-      <div class="feature-image__caption">Rzemiosło ponad efektem.</div>
-    </section>
-
-    <section class="menu-section section" id="menu">
-      <div class="section__number reveal">02 / Menu</div>
-      <div class="menu-section__head">
-        <p class="eyebrow reveal">Aktualna karta</p>
-        <h2 class="heading reveal">Sezon na <em>dobry smak.</em></h2>
-        <div class="menu-tabs reveal" role="tablist">
-          <button class="active" data-tab="dinner">Kolacja</button>
-          <button data-tab="dessert">Desery</button>
-          <button data-tab="drinks">Napoje</button>
-        </div>
-      </div>
-      <div class="menu-list reveal" data-menu-list></div>
-      <p class="menu-note reveal">Menu zmienia się razem z dostępnością produktów. Zapytaj obsługę o dania dnia i alergeny.</p>
-    </section>
-
-    <section class="experience">
-      <div class="experience__image">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=90" alt="Nakryty stół w restauracji EMBER">
-      </div>
-      <div class="experience__copy">
-        <span class="section__number reveal">03 / Doświadczenie</span>
-        <p class="eyebrow reveal">Wieczór przy stole</p>
-        <h2 class="heading reveal">Miejsce stworzone<br><em>do spotkań.</em></h2>
-        <p class="reveal">Przyjdź na szybką kolację albo zostań na cały wieczór. Nasz zespół zadba o resztę, bez sztywnej atmosfery i bez pośpiechu.</p>
-        <div class="experience__facts reveal">
-          <div><strong>48</strong><span>miejsc</span></div>
-          <div><strong>7</strong><span>dań degustacyjnych</span></div>
-          <div><strong>12</strong><span>lokalnych dostawców</span></div>
+      <div class="manifest__main">
+        <p class="mono reveal">MANIFESTO / V.2026</p>
+        <h2 class="reveal">Składnik jest<br>pytaniem.<br><em>Ogień odpowiedzią.</em></h2>
+        <div class="manifest__grid reveal">
+          <p>EMBER to restauracja i laboratorium. Każde danie zaczynamy od produktu, nie od przepisu. Temperaturę, dym i czas traktujemy jak składniki.</p>
+          <dl>
+            <div><dt>01</dt><dd>ZERO DEKORACJI<br>BEZ FUNKCJI</dd></div>
+            <div><dt>02</dt><dd>100% OTWARTEGO<br>OGNIA</dd></div>
+            <div><dt>03</dt><dd>12 LOKALNYCH<br>DOSTAWCÓW</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <section class="booking section" id="booking">
-      <div class="booking__intro">
-        <p class="eyebrow reveal">Rezerwacja online</p>
-        <h2 class="heading reveal">Twój stół<br><em>już czeka.</em></h2>
-        <p class="reveal">Rezerwacje przyjmujemy dla grup do 8 osób. W sprawie większych spotkań napisz do nas bezpośrednio.</p>
+    <section class="process">
+      <div class="process__photo interactive reveal">
+        <img src="fire-process.webp" alt="Praca kucharza przy otwartym ogniu">
+        <div class="process__scan"></div>
       </div>
-      <form class="booking-form reveal" data-booking-form>
-        <div class="field">
-          <label for="name">Imię i nazwisko</label>
-          <input id="name" name="name" type="text" minlength="2" required placeholder="Jan Kowalski">
+      <div class="process__copy">
+        <div class="process__code mono reveal">HEAT_PROCESS.LOG<br>STATUS: ACTIVE<br>CHAMBER: 02</div>
+        <h2 class="reveal">Kontrola<br><i>chaosu.</i></h2>
+        <p class="reveal">Nie ujarzmiamy ognia. Uczymy się z nim pracować. Każdy stopień i każda sekunda zmieniają wynik.</p>
+        <div class="process__gauge reveal">
+          <span class="mono">LOW</span><i></i><i></i><i></i><i></i><i></i><strong></strong><span class="mono">RAW</span>
         </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" required placeholder="jan@email.pl">
+      </div>
+    </section>
+
+    <section class="experiments" id="experiments">
+      <header class="experiments__header">
+        <div class="mono reveal">(02) EDIBLE EXPERIMENTS</div>
+        <h2 class="reveal">Tonight's<br><em>research.</em></h2>
+      </header>
+      <div class="lab-tabs reveal" role="tablist">
+        <button class="active" data-tab="dinner"><span>01</span> SOLID</button>
+        <button data-tab="dessert"><span>02</span> SWEET</button>
+        <button data-tab="drinks"><span>03</span> LIQUID</button>
+      </div>
+      <div class="lab-menu" data-menu-list></div>
+      <div class="experiments__foot mono reveal">
+        <span>MENU MUTATES WITH THE SEASON</span><span>ALLERGEN DATA AVAILABLE ON REQUEST</span>
+      </div>
+    </section>
+
+    <section class="interlude">
+      <div class="interlude__orb" data-orb><i></i></div>
+      <p class="mono">A TASTE CANNOT BE<br>SCREENSHOT.</p>
+      <h2>Musisz być<br><em>przy stole.</em></h2>
+      <span class="interlude__mark">✳</span>
+    </section>
+
+    <section class="reserve" id="reserve">
+      <div class="reserve__intro">
+        <div class="mono reveal">(03) BOOK A SEAT / KRAKÓW</div>
+        <h2 class="reveal">Enter the<br><em>experiment.</em></h2>
+        <p class="reveal">48 miejsc. Jeden otwarty ogień. Rezerwacje dla grup do 8 osób.</p>
+        <div class="reserve__address mono reveal">MOSTOWA 12<br>31-061 KRAKÓW<br><br>WT–CZW 17–23<br>PT–SOB 17–00</div>
+      </div>
+      <form class="terminal reveal" data-booking-form>
+        <div class="terminal__bar mono"><span>EMBER_RESERVATION.EXE</span><span>● ● ●</span></div>
+        <div class="terminal__line mono">&gt; INITIALIZE NEW RESERVATION_</div>
+        <label><span>01 / IDENTITY</span><input name="name" minlength="2" required placeholder="IMIĘ I NAZWISKO"></label>
+        <div class="terminal__two">
+          <label><span>02 / EMAIL</span><input name="email" type="email" required placeholder="EMAIL@ADRES.PL"></label>
+          <label><span>03 / PHONE</span><input name="phone" type="tel" required placeholder="+48 000 000 000"></label>
         </div>
-        <div class="field">
-          <label for="phone">Telefon</label>
-          <input id="phone" name="phone" type="tel" required placeholder="+48 000 000 000">
+        <div class="terminal__three">
+          <label><span>04 / DATE</span><input id="date" name="date" type="date" required></label>
+          <label><span>05 / TIME</span><select name="time" required><option value="">--:--</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option><option>22:00</option></select></label>
+          <label><span>06 / PEOPLE</span><select name="guests" required><option value="">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option></select></label>
         </div>
-        <div class="field">
-          <label for="date">Data</label>
-          <input id="date" name="date" type="date" required>
-        </div>
-        <div class="field">
-          <label for="time">Godzina</label>
-          <select id="time" name="time" required>
-            <option value="">Wybierz godzinę</option>
-            <option>17:00</option><option>18:00</option><option>19:00</option>
-            <option>20:00</option><option>21:00</option><option>22:00</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="guests">Liczba gości</label>
-          <select id="guests" name="guests" required>
-            <option value="">Wybierz</option>
-            <option value="1">1 osoba</option><option value="2">2 osoby</option>
-            <option value="3">3 osoby</option><option value="4">4 osoby</option>
-            <option value="5">5 osób</option><option value="6">6 osób</option>
-            <option value="7">7 osób</option><option value="8">8 osób</option>
-          </select>
-        </div>
-        <div class="field field--wide">
-          <label for="notes">Dodatkowe informacje <span>(opcjonalnie)</span></label>
-          <textarea id="notes" name="notes" rows="2" maxlength="500" placeholder="Alergie, okazja, specjalne życzenia..."></textarea>
-        </div>
-        <button class="submit-button" type="submit"><span>Zarezerwuj stolik</span><span>↗</span></button>
-        <p class="form-status" role="status" data-form-status></p>
+        <label><span>07 / NOTES (OPTIONAL)</span><textarea name="notes" maxlength="500" rows="2" placeholder="ALERGIE / OKAZJA / INNE"></textarea></label>
+        <button type="submit"><span>EXECUTE BOOKING</span><span>[ENTER] ↵</span></button>
+        <p class="form-status mono" data-form-status></p>
       </form>
-    </section>
-
-    <section class="visit" id="visit">
-      <div class="visit__map">
-        <div class="visit__map-grid"></div>
-        <div class="pin"><span>EMBER</span><i></i></div>
-        <span class="street street--one">ul. Mostowa</span>
-        <span class="street street--two">Bulwar Kurlandzki</span>
-        <span class="river">WISŁA</span>
-      </div>
-      <div class="visit__details">
-        <p class="eyebrow">Znajdź nas</p>
-        <h2 class="heading">W samym sercu<br><em>Kazimierza.</em></h2>
-        <div class="visit__grid">
-          <div><span>Adres</span><p>ul. Mostowa 12<br>31-061 Kraków</p></div>
-          <div><span>Godziny</span><p>Wt — Czw: 17:00 — 23:00<br>Pt — Sob: 17:00 — 00:00<br>Nd — Pon: zamknięte</p></div>
-          <div><span>Kontakt</span><p><a href="tel:+48123456789">+48 12 345 67 89</a><br><a href="mailto:stolik@ember.restaurant">stolik@ember.restaurant</a></p></div>
-        </div>
-      </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer__brand">EMBER<span>.</span></div>
-    <div class="footer__line">
-      <span>© 2026 EMBER Restaurant</span>
-      <div><a href="#">Instagram ↗</a><a href="#">Facebook ↗</a></div>
-      <a href="#home">Wróć na górę ↑</a>
-    </div>
+    <div class="footer__top mono"><span>EMBER® OPEN FIRE LAB</span><span>KRAKÓW / POLAND</span><span>EST. 2026</span></div>
+    <div class="footer__word">EMB<span>E</span>R</div>
+    <div class="footer__bottom mono"><span>STOLIK@EMBER.RESTAURANT</span><span>INSTAGRAM ↗ &nbsp; BEHANCE ↗</span><a href="#top">BACK TO HEAT ↑</a></div>
   </footer>
-
-  <div class="toast" data-toast></div>
+  <div class="toast mono" data-toast></div>
 </body>
 </html>
